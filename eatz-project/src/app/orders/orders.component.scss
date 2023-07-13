@@ -1,0 +1,39 @@
+@import "../core/sass/index.scss";
+
+.container{
+    display: flex;
+    padding: $spacing-7 $spacing-8;
+}
+.order-container{
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-4;
+    width: 100%;
+    .order-title{
+        color: $secondary-color;
+        align-self: self-start;
+        font-family: 'Poppins-Light';
+        font-size: 30px;
+    }
+    .order-cell{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        background-color: $order-color;
+        border-radius: $spacing-1;
+        padding: $spacing-3;
+        .order-details{
+            display: flex;
+            gap: $spacing-1+$spacing-05;
+            
+            .order-image{
+                height: $spacing-8;
+                width: $spacing-8;
+                aspect-ratio: 3/4;
+                border-top-left-radius: $spacing-05;
+                border-top-right-radius: $spacing-05;
+            }
+        }
+    }
+
+}

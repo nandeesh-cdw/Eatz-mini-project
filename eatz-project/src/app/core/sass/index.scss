@@ -1,0 +1,14 @@
+@import "font";// imports fonts from font.scss
+@import "spacing";//import
+@import "colors";
+
+.btn-danger{
+    font-family:'Poppins-SemiBold';
+    font-size: 20px;
+
+    border: transparent;
+    height: $spacing-3;
+    width: $spacing-8;
+    background-color: $primary-color;
+    color: $white;
+}

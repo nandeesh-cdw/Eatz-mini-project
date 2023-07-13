@@ -1,1 +1,39 @@
+@import '../core/sass/index.scss';
+
+
+.header{
+    display: flex;
+    justify-content: space-evenly;
+    padding: $spacing-1 0;
+    background-color: $primary-color;
+    .links{
+        cursor: pointer;
+        color: $white;
+        display: flex;
+        justify-content: center;
+        gap: $spacing-5;
+        margin-right: $spacing-10*2;
+        align-items: center;
+        
+    }
+    .cart-section{
+        display: flex;
+        align-items: center;
+        gap:$spacing-05;
+        .cart{
+            cursor: pointer;
+            color: $white;
+        }
+        .fa-caret-down{
+            color: $white;
+            
+        }
+    }
+
+}
+
+.title{
+    color: $white;
+    font-size: 40px;
+}
 

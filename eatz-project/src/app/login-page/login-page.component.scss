@@ -1,0 +1,36 @@
+@import "../core/sass/index.scss";
+
+.form-component{
+    display: flex;
+    padding: $spacing-7 $spacing-8;
+    // justify-content: center;
+    gap:$spacing-6;
+    .login-image{
+        width: $spacing-10*6;
+        height: $spacing-10*4;
+        aspect-ratio: 16/9;
+        
+    }
+    .form-container{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        width: 400px;
+        padding:$spacing-2;
+        gap:50px;
+        .login-title{
+            color: $secondary-color;
+            align-self: self-start;
+            font-family: 'Poppins-Light';
+            font-size: 30px;
+        }
+        .form-control{
+            width: 100%;
+            border:transparent none;
+            padding: $spacing-1;
+            box-shadow: rgba(236, 126, 178, 0.2) 0px 7px 29px 0px;
+        }
+        
+    }
+}
