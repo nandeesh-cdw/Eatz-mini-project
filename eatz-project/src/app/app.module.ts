@@ -5,16 +5,22 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { OrdersComponent } from './orders/orders.component';
+import { AppRouting } from './app.routing';
+import { HttpClientModule } from '@angular/common/http';
+import { DateCustomPipe } from './shared/pipes/date-custom.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     LoginPageComponent,
-    OrdersComponent
+    OrdersComponent,
+    DateCustomPipe
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRouting,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

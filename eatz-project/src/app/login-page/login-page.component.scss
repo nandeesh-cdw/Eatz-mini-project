@@ -2,12 +2,12 @@
 
 .form-component{
     display: flex;
-    padding: $spacing-7 $spacing-8;
+    padding: $spacing-7 $spacing-9;
     // justify-content: center;
     gap:$spacing-6;
     .login-image{
-        width: $spacing-10*6;
-        height: $spacing-10*4;
+        width: $spacing-10*6+$spacing-5;
+        height: $spacing-10*4+$spacing-5;
         aspect-ratio: 16/9;
         
     }

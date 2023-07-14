@@ -1,26 +1,55 @@
 <div class="container">
-    <div class="order-container">
-        <h3 class="order-title">Your Orders</h3>
-        <div class="order-cell">
-            <div class="order-details">
-                <img class="order-image" src="../../assets/images/download.jpeg" alt="food">
-                <div class="order-tab">
-                    <h3 class="order-title">Cafe Coffee Day</h3>
-                    <p class="order-place">Mount Road</p>
-                    <p class="order-id">Order #212211039</p>
-                    <div class="order-items">
-                        <p class="food-item">Veg Sandwich</p>
-                        <p class="food-item">Lime Soda</p>
-                    </div>
-                </div>
-            </div>
-            <div class="order-status">
-                <p>Ordered on 28th June 2021, 4:55pm </p>
-                <p class="order-price">Total: $20.12</p>
-                <div class="order-btn">
-                    <button class="btn-danger" type="button">View Details</button>
-                </div>
-            </div>
+  <div class="order-container">
+    <h3 class="order-title">Your Orders</h3>
+    <div class="order-cell" *ngFor="let order of displayedOrders">
+      <div class="order-details">
+        <img class="order-image" [src]="url" alt="food" />
+        <div class="order-tab">
+          <h3 class="food-title">{{ order.restaurant }}</h3>
+          <p class="order-place">{{ order.location }}</p>
+          <p class="order-id">Order #{{ order.id }}</p>
+          <div class="order-items">
+            <p class="food-item" *ngFor="let item of order.orderItems">
+              {{ item.name }}
+            </p>
+          </div>
         </div>
+      </div>
+      <div class="order-status">
+        <div class="order-info">
+          <p>Ordered on {{ order.orderDateTime | dateCustom }}</p>
+          <p class="order-price">Total: {{ order.price?.subTotal }}</p>
+        </div>
+        <div class="order-btn-section">
+          <button class="btn-danger" type="button" (click)="viewDetails(order)">
+            View Details
+          </button>
+        </div>
+      </div>
     </div>
+    <button
+      class="show-more btn-danger"
+      type="button"
+      (click)="loadMore()"
+      *ngIf="displayedOrders.length < orders.length"
+    >
+      show more
+    </button>
+  </div>
+  <div class="modal" *ngIf="isModalOpen">
+    <div class="view-order">
+      <div class="modal-container">
+            <img class="modal-image" [src]="url" alt="food" />
+            <div class="modal-detail">
+                <div><p class="order-place">Name</p></div>
+                <div><p class="order-place">Status</p></div>
+                <div><p class="order-place">PayMentDetails</p></div>
+            </div>
+      </div>
+      <button type="button" class="btn-danger" (click)="closeModal()">
+        Close
+      </button>
+    </div>
+    
+  </div>
 </div>

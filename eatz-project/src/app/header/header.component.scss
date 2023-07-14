@@ -3,8 +3,8 @@
 
 .header{
     display: flex;
-    justify-content: space-evenly;
-    padding: $spacing-1 0;
+    justify-content: space-between;
+    padding: $spacing-0-75 $spacing-9;
     background-color: $primary-color;
     .links{
         cursor: pointer;
@@ -19,7 +19,7 @@
     .cart-section{
         display: flex;
         align-items: center;
-        gap:$spacing-05;
+        gap:$spacing-0-5;
         .cart{
             cursor: pointer;
             color: $white;
