@@ -1,20 +1,12 @@
 @import "../core/sass/index.scss";
 
-.container{
-    display: flex;
-    padding: $spacing-7 $spacing-9;
-}
+
 .order-container{
     display: flex;
     flex-direction: column;
     gap: $spacing-4;
     width: 100%;
-    .order-title{
-        color: $secondary-color;
-        align-self: self-start;
-        // font-family: 'Poppins-Regular';
-        font-size: $spacing-2;
-    }
+    
     .order-cell{
         display: flex;
         justify-content: space-between;

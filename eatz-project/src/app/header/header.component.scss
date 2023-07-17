@@ -4,7 +4,7 @@
 .header{
     display: flex;
     justify-content: space-between;
-    padding: $spacing-0-75 $spacing-9;
+    padding: $spacing-1 $spacing-9;
     background-color: $primary-color;
     .links{
         cursor: pointer;
@@ -34,6 +34,6 @@
 
 .title{
     color: $white;
-    font-size: 40px;
+    font-size: $spacing-3;
 }
 

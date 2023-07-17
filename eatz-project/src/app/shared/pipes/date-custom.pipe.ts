@@ -24,10 +24,21 @@ export class DateCustomPipe implements PipeTransform {
   }
 
   private getOrdinalSuffix(day: number): string {
-    const suffixes = ['th', 'st', 'nd', 'rd'];
-    const relevantDigits = day % 100;
-    const suffix = relevantDigits > 10 && relevantDigits < 20 ? suffixes[0] : suffixes[relevantDigits % 10];
-    return suffix;
+    if (day >= 11 && day <= 13) {
+      return 'th';
+    }
+  
+    const lastDigit = day % 10;
+    switch (lastDigit) {
+      case 1:
+        return 'st';
+      case 2:
+        return 'nd';
+      case 3:
+        return 'rd';
+      default:
+        return 'th';
+    }
   }
 
   private padZero(number: number): string {

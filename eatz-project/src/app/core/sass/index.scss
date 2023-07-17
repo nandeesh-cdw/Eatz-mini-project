@@ -3,12 +3,26 @@
 @import "colors";
 
 .btn-danger{
-    font-family:'Poppins-SemiBold';
+    cursor: pointer;
+    font-family:'Poppins-Medium';
     font-size: $spacing-1;
-
     border: transparent;
     height: $spacing-2+$spacing-0-5;
     width: $spacing-9;
     background-color: $primary-color;
     color: $white;
+    
+}
+.unavailable{
+    opacity: 0.5;
+}
+.container{
+    display: flex;
+    padding: $spacing-4 $spacing-9+$spacing-0-5;
+}
+.page-title{
+    color: $black;
+    align-self: self-start;
+    // font-family: 'Poppins-Regular';
+    font-size: $spacing-2;
 }

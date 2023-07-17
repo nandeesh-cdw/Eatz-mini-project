@@ -1,0 +1,77 @@
+@import '../core/sass/index.scss';
+
+.offer-component{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    .offer-container{
+        display: flex;
+        flex-wrap: wrap;
+        gap:$spacing-3;
+        .offer-cell{
+            display: flex;
+            flex-direction: column;
+            // justify-content: end;
+            margin: $spacing-2 0;
+            width: calc(33% - 2rem);
+            background-color: $white;
+            border-radius:$spacing-1 ;
+            box-shadow: rgba(236, 126, 178, 0.2) 0px 7px 29px 0px;
+            padding-bottom: $spacing-1+$spacing-0-5;
+            .food-image{
+                width: 100%;
+                border-top-left-radius: $spacing-1;
+                border-top-right-radius: $spacing-1;
+            }
+            .btn-danger{
+                align-self: flex-end;
+                margin-right: $spacing-2;
+            }
+            .offer-details{
+                display: flex;
+                flex-wrap: nowrap;
+                padding: $spacing-2 $spacing-0-75;
+                justify-content: baseline;
+                gap:$spacing-0-5;
+                .food-option{
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    background-color: red;
+                }
+                .food-details{
+                    .food-name{
+                            font-size: $spacing-1+$spacing-0-25;
+                            color: $light-grey;
+                    }
+                    .restaurant-name{
+                        font-family: 'Poppins-Medium';
+                    }
+                    .delivery-detail{
+                        font-family: 'Poppins-light';
+                        font-size: $spacing-1;
+                        color: $light-grey;
+                        margin-top: $spacing-0-5;
+                    }
+                }
+                .price-details{
+                    justify-self: end;
+                    margin-left: auto;
+                    padding-right: $spacing-1;
+                    .new-price{
+                        font-family:Georgia, 'Times New Roman', Times, serif;
+                        font-size: $spacing-1+$spacing-0-5;
+                        font-weight: 600;
+                        color: $new-price;
+                    }
+                    .old-price{
+                        font-family:Georgia, 'Times New Roman', Times, serif;
+                        font-size: $spacing-1;
+                        color:$old-price;
+                        text-decoration: line-through;
+                    }
+                }
+            }
+        }
+    }
+}

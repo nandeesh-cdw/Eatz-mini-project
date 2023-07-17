@@ -8,6 +8,7 @@ import { OrdersComponent } from './orders/orders.component';
 import { AppRouting } from './app.routing';
 import { HttpClientModule } from '@angular/common/http';
 import { DateCustomPipe } from './shared/pipes/date-custom.pipe';
+import { OffersComponent } from './offers/offers.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { DateCustomPipe } from './shared/pipes/date-custom.pipe';
     HeaderComponent,
     LoginPageComponent,
     OrdersComponent,
-    DateCustomPipe
+    DateCustomPipe,
+    OffersComponent
   ],
   imports: [
     BrowserModule,

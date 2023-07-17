@@ -1,27 +1,38 @@
-export class Order {
-    id?: string|undefined;
-    restaurant?: string;
-    location?: string;
-    address?: {
-      from: string;
-      to: string;
-    };
-    orderDateTime?: string;
-    deliveryDateTime?: string;
-    status?: string;
-    imageId?: string;
-    price?: {
-      subTotal: number;
-      packingCost: number;
-      discount: number;
-      total: number;
-    };
-    paymentMode?:string;
-    orderItems?: [{
-      name: string;
-      quantity: number;
-      costForOne: number;
-      itemCost: number;
-    }];
-  }
+
+interface OrderMasterData {
+  totalOrders: number;
+  orders:Array<Order>;
+}
+interface Order{
+  id: string;
+  restaurant: string;
+  location: string;
+  address: address;
+  orderDateTime: string;
+  deliveryDateTime: string;
+  status: string;
+  imageId: string;
+  price?: Price;
+  paymentMode: string;
+  orderItems: Array<OrderItems>; // or this -> OrderItems[];
+}
+
+interface address{
+    from: string;
+    to: string;
   
+}
+interface Price {
+  subTotal: number;
+  packingCost: number;
+  discount: number;
+  total: number;
+}
+interface OrderItems {
+  name: string;
+  quantity: number;
+  costForOne: number;
+  itemCost: number;
+}
+
+export { Order, Price, OrderItems,OrderMasterData};
