@@ -9,6 +9,14 @@ import { AppRouting } from './app.routing';
 import { HttpClientModule } from '@angular/common/http';
 import { DateCustomPipe } from './shared/pipes/date-custom.pipe';
 import { OffersComponent } from './offers/offers.component';
+import { RestaurantsComponent } from './restaurants/restaurants.component';
+import { SearchFilterComponent } from './shared/components/search-filter/search-filter.component';
+import { HomePageComponent } from './home-page/home-page.component';
+
+import { FilterPipe } from './shared/pipes/filter.pipe';
+import { FormsModule } from '@angular/forms';
+import { FormComponent } from './home-page/form/form.component';
+
 
 @NgModule({
   declarations: [
@@ -17,12 +25,18 @@ import { OffersComponent } from './offers/offers.component';
     LoginPageComponent,
     OrdersComponent,
     DateCustomPipe,
-    OffersComponent
+    OffersComponent,
+    RestaurantsComponent,
+    SearchFilterComponent,
+    HomePageComponent,
+    FilterPipe,
+    FormComponent
   ],
   imports: [
     BrowserModule,
     AppRouting,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

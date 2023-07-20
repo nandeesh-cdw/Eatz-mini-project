@@ -2,6 +2,16 @@
 @import "spacing";//import
 @import "colors";
 
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+*:focus {
+    outline: none;
+}
+
 .btn-danger{
     cursor: pointer;
     font-family:'Poppins-Medium';
@@ -15,9 +25,11 @@
 }
 .unavailable{
     opacity: 0.5;
+    
 }
 .container{
     display: flex;
+    height: 90vh;
     padding: $spacing-4 $spacing-9+$spacing-0-5;
 }
 .page-title{
@@ -25,4 +37,8 @@
     align-self: self-start;
     // font-family: 'Poppins-Regular';
     font-size: $spacing-2;
+}
+.error-message{
+    color: $primary-color;
+    font-size: $spacing-1;
 }

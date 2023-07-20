@@ -1,5 +1,5 @@
 interface OfferMasterData{
-    result:Offer
+    result:Array<Offer>
 }
 interface Offer{
     restaurant: string;

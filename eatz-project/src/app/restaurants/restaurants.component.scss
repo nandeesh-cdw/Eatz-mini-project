@@ -1,0 +1,37 @@
+@import '../core/sass/index.scss';
+@import '../offers/offers.component.scss';
+
+.offer-component {
+    .title-section{
+        display: flex;
+        justify-content: space-between;
+    }
+    .offer-container {
+
+        .offer-cell {
+
+            .cell-details {
+
+                padding: $spacing-2 $spacing-2 $spacing-1 $spacing-2;
+
+                .restaurant-details {
+                    display: flex;
+                    flex-direction: column;
+                    margin-left: auto;
+                    text-align: end;
+                    gap: $spacing-0-25;
+                    .rating,
+                    .delivery-time,
+                    .cost {
+                        font-family: "Poppins-Light";
+                        font-size: $spacing-0-75;
+                        font-weight: 600;
+                        color: $black;
+                    }
+
+                }
+            }
+
+        }
+    }
+}

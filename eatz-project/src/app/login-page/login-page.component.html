@@ -1,12 +1,16 @@
 <div class="container">
     <div class="form-component">
         <img  class='login-image'src="../../assets/images/LoginImage.png" alt="LoginImage"/>
-            <form>
+            <form #login="ngForm" (ngSubmit)="onSubmit()">
                 <div class="form-container">
                 <h3 class="login-title">Login into Eatz</h3>
-                <input type="text" class="form-control" placeholder="Username"/>
-                <input type="text" class="form-control" placeholder="Password"/>
-                <button class="btn-danger" type="submit">LOGIN</button>
+                <input type="text" name="username" class="form-control" placeholder="Username" required [(ngModel)]="username"/>
+                <input type="password" name="password" class="form-control" placeholder="Password" required [(ngModel)]="password"/>
+                <div class="btn-section">
+                    <button class="btn-danger" type="submit">LOGIN</button>
+                    <button class="btn-guest" type="button" (click)="onGuestLogin()">LOGIN as GUEST</button>
+                </div>
+                
                 </div> 
             </form>
     </div>

@@ -1,15 +1,14 @@
 <header class="header">
     <h1 class="title">eatz</h1>
-    <div class="links">
-        <a  >Home</a>
-        <a routerLink='/offers'>Offers</a>
-        <a>Restaurants</a>
-        <a routerLink='/orders' routerLinkActive="">Orders</a>
-        <a>Account</a>
-        <a routerLink="/login" routerLinkActive="">Login</a>
+    <div class="link-section" >
+        <a  class='links'routerLink="/home"routerLinkActive="" *ngIf="isGuest || isUser">Home</a>
+        <a  class='links'routerLink='/offers' routerLinkActive="" *ngIf="isGuest || isUser">Offers</a>
+        <a  class='links'routerLink="/restaurants" routerLinkActive="" *ngIf="isGuest || isUser">Restaurants</a>
+        <a  class='links'routerLink='/orders' routerLinkActive="" *ngIf="isUser">Orders</a>
+        <a  class='links'routerLink="" routerLinkActive="" *ngIf="isUser || isGuest" (click)="onLogout()">Logout</a>
     </div>
-    <div class="cart-section">
-        <a class="cart">cart</a><i class="fa-solid fa-caret-down"></i>
+    <div class="cart-section" >
+        <a class="cart" >cart <span class="cart-list">{{ orderSize }}</span><img src="../../assets/icons/caret-down-red.svg" alt=""></a>
         <!-- download the svg file instead of cdn  -->
     </div>
 </header>

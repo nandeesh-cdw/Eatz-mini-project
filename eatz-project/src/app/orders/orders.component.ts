@@ -1,61 +1,63 @@
 import { Component, OnInit } from '@angular/core';
 import { OrderService } from '../core/services/order.service';
 import { Order, OrderMasterData } from '../core/model/order.model';
+import { IMAGEAPI } from '../core/constants/api';
 // import{ Constants} from '../core/constants/constants';
 @Component({
   selector: 'app-orders',
   templateUrl: './orders.component.html',
-  styleUrls: ['./orders.component.scss']
+  styleUrls: ['./orders.component.scss'],
 })
 export class OrdersComponent implements OnInit {
   isModalOpen = false;
-  modalOrder!:Order;// dont use any 
-  url="../../assets/images/download.jpeg"; //keep in constants
-  orders!:Order[];
-  displayedOrders:Order[]=[];
-  itemsPerPage:number =4;
-  constructor(private orderService: OrderService){}
-  ngOnInit():void 
-  {
+  modalOrder!: Order; // dont use any
+  url = IMAGEAPI; //keep in constants
+  orders: Order[] = [];
+  displayedOrders: Order[] = [];
+  itemsPerPage: number = 4;
+  constructor(private orderService: OrderService) {}
+  ngOnInit(): void {
     this.getOrders();
   }
   /**
-   * This method is used to get load more orders 
+   * This method is used to get load more orders
    */
 
-  loadMore() : void{
+  loadMore(): void {
     const startIndex = this.displayedOrders.length;
     const endIndex = startIndex + this.itemsPerPage;
     if (startIndex < this.orders.length) {
-      this.displayedOrders = this.displayedOrders.concat(this.orders.slice(startIndex, endIndex));
+      this.displayedOrders = this.displayedOrders.concat(
+        this.orders.slice(startIndex, endIndex)
+      );
     }
   }
   /**
-   * 
-   * @param order Takes a order as a parameter when the user clicks the view details 
+   *
+   * @param order Takes a order as a parameter when the user clicks the view details
    */
-  viewDetails(order:Order) : void  {
+  viewDetails(order: Order): void {
     console.log(order);
     this.openModal();
-    this.modalOrder=order;
+    this.modalOrder = order;
   }
   /**
-   * This method is called when the user clicks on the view details button which triggers the modal behaviour 
+   * This method is called when the user clicks on the view details button which triggers the modal behaviour
    */
-  openModal():void {
-    this.isModalOpen=true;
+  openModal(): void {
+    this.isModalOpen = true;
   }
   /**
-   * This method is called when the user clicks on the view details button which triggers the modal behaviour and closes the modal 
+   * This method is called when the user clicks on the view details button which triggers the modal behaviour and closes the modal
    */
-  closeModal():void{
-    this.isModalOpen=false;
+  closeModal(): void {
+    this.isModalOpen = false;
   }
   /**
    * This method is used to get the order details from the api using the order service .
    */
-  getOrders():void {
-    this.orderService.getOrders().subscribe((response:OrderMasterData) => {
+  getOrders(): void {
+    this.orderService.getOrders().subscribe((response: OrderMasterData) => {
       this.orders = response.orders;
       this.loadMore();
     });

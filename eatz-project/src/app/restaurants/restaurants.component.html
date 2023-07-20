@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="offer-component">
+      <div class="title-section">
+        <div class="page-title">Restaurants</div>
+        <app-search-filter></app-search-filter>
+      </div>
+      <div class="offer-container">
+        <div class="offer-cell" [class.unavailable]='!restaurant.open' *ngFor="let restaurant of restaurants  | filterPipe:searchText">
+          <img class="food-image" [src]="offerImageUrl + restaurant.cloudinaryImageId" alt="" />
+          <div class="cell-details">
+            <div class="food-details">
+              <div class="food-name">{{ restaurant.name }}</div>
+              <div class="restaurant-name">Mount Road</div>
+              <div class="delivery-detail">{{ restaurant.cuisine }}</div>
+            </div>
+            <div class="restaurant-details">
+              <div class="rating">Rating {{ restaurant?.rating }}</div>
+              <div class="delivery-time">Delivery in {{ restaurant.deliveryTimeInMins }} mins</div>
+              <div class="cost">₹ {{ restaurant.price.costForTwo }} for two</div>
+            </div>
+          </div>
+          <button class="btn-danger" type="button">See More</button>
+        </div>
+      </div>
+    </div>
+  </div>

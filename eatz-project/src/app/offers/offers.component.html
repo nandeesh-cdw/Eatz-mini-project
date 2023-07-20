@@ -2,21 +2,35 @@
   <div class="offer-component">
     <div class="page-title">Offers</div>
     <div class="offer-container">
-      <div class="offer-cell" [class.unavailable]='!offer.available' *ngFor="let offer of offers">
-        <img class="food-image" [src]="offerImageUrl" alt="" />
-        <div class="offer-details">
+      <div
+        class="offer-cell"
+        [class.unavailable]="!offer.available"
+        *ngFor="let offer of offers"
+      >
+        <img
+          class="food-image"
+          [src]="offerImageUrl + offer.cloudinaryImageId"
+          alt=""
+        />
+        <div class="cell-details">
           <div class="food-option"></div>
           <div class="food-details">
             <div class="food-name">{{ offer.name }}</div>
             <div class="restaurant-name">{{ offer.restaurant }}</div>
-            <div class="delivery-detail">Delivery in {{ offer.deliveryTimeInMins }} mins</div>
+            <div class="delivery-detail">
+              Delivery in {{ offer.deliveryTimeInMins }} mins
+            </div>
           </div>
           <div class="price-details">
             <div class="new-price">₹ {{ offer.price.discountPrice }}</div>
-            <div class="old-price">₹ {{ offer.price.costPrice }}</div>
+            <div class="old-price" >₹ {{ offer.price.costPrice }}</div>
           </div>
         </div>
-        <button class="btn-danger" type="button" [disabled]="!offer.available">Add to Cart</button>
+        <button class="btn-danger" type="button" (click)="onAddCart()" [disabled]="!offer.available">
+          Add to Cart
+        </button>
+        <!-- <button (click)="onAddCart()">add </button> -->
+        <!-- Use subject for add to cart -->
       </div>
     </div>
   </div>
