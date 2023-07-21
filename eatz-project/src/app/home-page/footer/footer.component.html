@@ -1,0 +1,66 @@
+<div class="container">
+    <!-- footer section  -->
+    <div class="footer-section">
+        <!-- title -->
+        <h3 class="footer-title">{{ footerTitle }}</h3>
+        <!-- description  -->
+        <div class="description">{{ footerDescription }}</div>
+        <div class="catalog-section">
+            <!-- offer cell -->
+            <div class="offer-cell" >
+                <img class="food-image"[src]="imageUrl" alt=""/>
+                <div class="food-section">
+                    <div class="food-details">
+                        <div class="food-title">{{ foodName }}</div>
+                        <div class="food-price">$ {{ foodPrice }}</div>
+                    </div>
+                    <div class="food-description">
+                        {{ foodDescription }}
+                    </div>
+                </div>
+            </div>
+            <!-- offer cell -->
+            <div class="offer-cell" >
+                <img class="food-image"[src]="imageUrl" alt=""/>
+                <div class="food-section">
+                    <div class="food-details">
+                        <div class="food-title">{{ foodName }}</div>
+                        <div class="food-price">$ {{ foodPrice }}</div>
+                    </div>
+                    <div class="food-description">
+                        {{ foodDescription }}
+                    </div>
+                </div>
+            </div>
+            <!-- offer cell -->
+            <div class="offer-cell" >
+                <img class="food-image"[src]="imageUrl" alt=""/>
+                <div class="food-section">
+                    <div class="food-details">
+                        <div class="food-title">{{ foodName }}</div>
+                        <div class="food-price">$ {{ foodPrice }}</div>
+                    </div>
+                    <div class="food-description">
+                        {{ foodDescription }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- footer  -->
+        <footer class="footer">
+            <div class="company-title" > <img class="footer-icons" [src]="copyright" alt="copyright"> {{ companyName }}</div>
+            <div class="links-section">
+                <!-- social links  -->
+                <div class="media-links">
+                    <img  class="footer-icons" [src]="instagram" alt="instagram"/>
+                    <img  class="footer-icons" [src]="facebook" alt="facebook">
+                    <img  class="footer-icons" [src]="linkedin" alt="linkedin">
+                    <img  class="footer-icons" [src]="instagram" alt="instagram">
+                </div>
+                
+                <div class="company-title"> <img [src]="copyright" alt="copyright"> {{ companyName }}</div>
+            </div>
+        </footer>
+    </div>
+    
+</div>

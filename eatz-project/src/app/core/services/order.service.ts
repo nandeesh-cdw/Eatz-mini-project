@@ -1,3 +1,5 @@
+/* The OrderService class is an Angular service that makes HTTP requests to retrieve order data from an
+API. */
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { OrderMasterData } from '../model/order.model';
@@ -8,7 +10,7 @@ import { ORDERSAPI} from '../constants/api';
   providedIn: 'root'
 })
 export class OrderService {
- readonly ORDERS_API !:string// Replace with your API URL
+ readonly ORDERS_API !:string
 
   constructor(private http: HttpClient) {
     this.ORDERS_API=ORDERSAPI;

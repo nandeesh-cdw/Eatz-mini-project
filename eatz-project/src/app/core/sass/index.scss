@@ -8,37 +8,41 @@
     box-sizing: border-box;
     padding: 0;
 }
+//removes focus for the inputs 
 *:focus {
     outline: none;
 }
-
+//styles for the default button
 .btn-danger{
     cursor: pointer;
     font-family:'Poppins-Medium';
+    text-align: center;
     font-size: $spacing-1;
     border: transparent;
     height: $spacing-2+$spacing-0-5;
     width: $spacing-9;
-    background-color: $primary-color;
+    background-color: $primary;
     color: $white;
     
 }
+// styles for unavailble styles 
 .unavailable{
     opacity: 0.5;
-    
 }
+// container styles 
 .container{
     display: flex;
-    height: 90vh;
+    height: 80vh;
     padding: $spacing-4 $spacing-9+$spacing-0-5;
 }
+// page title styles 
 .page-title{
     color: $black;
     align-self: self-start;
-    // font-family: 'Poppins-Regular';
     font-size: $spacing-2;
 }
+//styles for the error message
 .error-message{
-    color: $primary-color;
-    font-size: $spacing-1;
+    color: $primary;
+    font-size: $spacing-0-75;
 }

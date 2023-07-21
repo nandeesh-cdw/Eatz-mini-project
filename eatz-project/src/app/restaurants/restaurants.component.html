@@ -2,7 +2,7 @@
     <div class="offer-component">
       <div class="title-section">
         <div class="page-title">Restaurants</div>
-        <app-search-filter></app-search-filter>
+        <app-search-filter [showResults]="showResults"></app-search-filter>
       </div>
       <div class="offer-container">
         <div class="offer-cell" [class.unavailable]='!restaurant.open' *ngFor="let restaurant of restaurants  | filterPipe:searchText">

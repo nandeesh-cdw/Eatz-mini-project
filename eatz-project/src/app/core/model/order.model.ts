@@ -1,4 +1,6 @@
-
+/**
+ * This is the modal class for orders api 
+ */
 interface OrderMasterData {
   totalOrders: number;
   orders:Array<Order>;

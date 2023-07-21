@@ -20,7 +20,7 @@
         // padding:$spacing-1;
         gap:50px;
         .login-title{
-            color: $secondary-color;
+            color: $secondary;
             align-self: self-start;
             font-family: 'Poppins-Light';
             font-size:$spacing-1 + $spacing-0-75;
@@ -41,7 +41,7 @@
                 border: transparent;
                 height: $spacing-2+$spacing-0-5;
                 width: $spacing-9;
-                background-color: $secondary-color;
+                background-color: $secondary;
                 color: $white;
             }
 

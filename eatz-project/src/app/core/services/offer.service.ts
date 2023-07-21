@@ -1,6 +1,8 @@
+/* The OfferService class is an Angular service that retrieves offer data from a server using the
+HttpClient module. */
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { BehaviorSubject, Observable } from "rxjs";
+import { Observable } from "rxjs";
 import { OfferMasterData } from "../model/offer.model";
 import { OFFERSAPI } from "../constants/api";
 
@@ -10,8 +12,6 @@ import { OFFERSAPI } from "../constants/api";
   })  
 export class OfferService{
     constructor(private http: HttpClient) {}
-    orderList=new BehaviorSubject<number>(0);
-    orderList$ = this.orderList.asObservable();
     readonly OFFERSAPI=OFFERSAPI;
 
     /**
@@ -21,11 +21,5 @@ export class OfferService{
     getOffers():Observable<OfferMasterData>{
     return this.http.get(OFFERSAPI) as Observable<OfferMasterData>;
     }
-    getOrderList():Observable<number>{
-      return this.orderList$;
-    }
-    addOrder():void{
-      this.orderList.next(this.orderList.value + 1);
-      console.log("Added order");
-    }
+    
 }

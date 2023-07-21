@@ -1,3 +1,5 @@
+/* The LoginService class is an Angular service that manages user login status, guest login status, and
+order list count. */
 import { Injectable } from "@angular/core";
 import { BehaviorSubject, Observable} from "rxjs";
 
@@ -6,36 +8,50 @@ import { BehaviorSubject, Observable} from "rxjs";
   })
 
 export class LoginService{
-    
-    userLoggedIn: boolean = false;
-    guestLoggedIn: boolean = false;
-    loggedIn: boolean = false;
+    orderList=new BehaviorSubject<number>(0);
+    orderList$ = this.orderList.asObservable();
     isLoggedIn=new BehaviorSubject<boolean>(false);
     isGuest=new BehaviorSubject<boolean>(false);
 
+    // used to login the user 
     loginUser():void{
-        this.userLoggedIn=true;
         this.isLoggedIn.next(true);
     }
-
+    // used to login the guest user 
     loginGuest():void{
-        this.guestLoggedIn=true; 
         this.isGuest.next(true);
     }
-
+    // used to logout both user and guest user 
     logout():void{
-        this.userLoggedIn = false;
-        this.guestLoggedIn= false;
+        this.orderList.next(0);
         this.isLoggedIn.next(false);
         this.isGuest.next(false);
     }
-
+    
+    /**
+    * @returns The `getUser()` method returns user `Observable` of type `boolean`.
+    */
     getUser():Observable<boolean>{
-        return this.isLoggedIn as Observable<boolean>;
+        return this.isLoggedIn.asObservable();
+   
     }
+    /**
+     * @returns The method is returning an guest Observable of type boolean.
+     */
     getGuest():Observable<boolean>{
-        return this.isGuest as Observable<boolean>;
+        return this.isGuest.asObservable()
     }
-    
-    
+    /**
+     * 
+     * @returns The getOrderList() function is returning orderlist Observable of type number.
+     */
+    getOrderList():Observable<number>{
+        return this.orderList$;
+    }
+    /**
+     * The addOrder function increments the value of the orderList by 1.
+     */
+    addOrder():void{
+        this.orderList.next(this.orderList.value + 1);
+    }
 }

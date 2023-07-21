@@ -1,3 +1,7 @@
+/**
+ * This is the modal class for restuarants api 
+ */
+
 interface RestaurantMasterData{
     result:Array<Restaurant>;
 }

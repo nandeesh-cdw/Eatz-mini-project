@@ -16,6 +16,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { FilterPipe } from './shared/pipes/filter.pipe';
 import { FormsModule } from '@angular/forms';
 import { FormComponent } from './home-page/form/form.component';
+import { FooterComponent } from './home-page/footer/footer.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { FormComponent } from './home-page/form/form.component';
     SearchFilterComponent,
     HomePageComponent,
     FilterPipe,
-    FormComponent
+    FormComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { OfferService } from '../core/services/offer.service';
 import { Offer, OfferMasterData } from '../core/model/offer.model';
 import { IMAGEAPI } from '../core/constants/api';
+import { LoginService } from '../core/services/login.service';
 @Component({
   selector: 'app-offers',
   templateUrl: './offers.component.html',
@@ -11,7 +12,7 @@ export class OffersComponent {
   // readonly OFFERS_CONSTANTS = ;
   offerImageUrl = IMAGEAPI;
   offers: Offer[] = [];
-  constructor(private offerService: OfferService) {}
+  constructor(private offerService: OfferService,private loginService:LoginService) {}
 
   ngOnInit(): void {
     this.getOffers();
@@ -25,7 +26,7 @@ export class OffersComponent {
       );
   }
   onAddCart():void{
-    this.offerService.addOrder();
+    this.loginService.addOrder();
     
   }
 }

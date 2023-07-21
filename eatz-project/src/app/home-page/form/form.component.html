@@ -1,34 +1,62 @@
 <div class="container">
-    <div class="form-container">
-      <h2 class="form-title">advanced booking</h2>
-      <app-search-filter (dataEvent)="showModal()" [isDisabled]="myForm.invalid"></app-search-filter>
-      <form #myForm="ngForm">
-        <div class="form-section">
-          <div class="date-section">
-            <label for="date" >Date</label>
-            <input type="date" name="date" id="date"  required (input)="validateDate(myForm)" [(ngModel)]="selectedDate" />
-            <div *ngIf="myForm.controls['date']?.errors?.['pastDate'] && myForm.controls['date']?.dirty">
-              <p class="error-message">Please select a valid future date.</p>
-            </div>
-          </div>
-          <div class="time-section">
-              <label for="time">Time</label>
-              <input type="time" name="time" id="time" required (change)="validateTime(myForm)" [(ngModel)]="selectedTime"/>
-              <div *ngIf="myForm.controls['time']?.errors?.['invalidTime'] && myForm.controls['time']?.dirty">
-                <p class="error-message">Please select a time from 9am-9pm.</p>
-              </div>
-          </div>
-          <div class="guest-section">
-            <label for="guest">Guests</label>
-            <select name="guest" id="guest">
-              <option value="2">2 People</option>
-              <option value="3">3 People</option>
-              <option value="4">4 People</option>
-              <option value="5">5 People</option>
-            </select>
+  <div class="form-container">
+    <h2 class="form-title">{{ title }}</h2>
+    <app-search-filter
+      (dataEvent)="showModal()"
+      [isDisabled]="myForm.invalid"
+    ></app-search-filter>
+    <form #myForm="ngForm">
+      <div class="form-section">
+        <div class="date-section">
+          <label for="date">Date</label>
+          <input
+            type="date"
+            name="date"
+            id="date"
+            required
+            (input)="validateDate(myForm)"
+            [(ngModel)]="selectedDate"
+          />
+          <div
+            *ngIf="myForm.controls['date']?.errors?.['pastDate'] && myForm.controls['date']?.dirty"
+          >
+            <p class="error-message">{{ errorMessage }}</p>
           </div>
         </div>
-      </form>
+        <div class="time-section">
+          <label for="time">Time</label>
+          <input
+            type="time"
+            name="time"
+            id="time"
+            required
+            (change)="validateTime(myForm)"
+            [(ngModel)]="selectedTime"
+          />
+          <div
+            *ngIf="myForm.controls['time']?.errors?.['invalidTime'] && myForm.controls['time']?.dirty"
+          >
+            <p class="error-message">{{ errorMessage }}</p>
+          </div>
+        </div>
+        <div class="guest-section">
+          <label for="guest">Guests</label>
+          <select name="guest" id="guest">
+            <option value="2">2 People</option>
+            <option value="3">3 People</option>
+            <option value="4">4 People</option>
+            <option value="5">5 People</option>
+          </select>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-backdrop" *ngIf="isModalOpen" (click)="onClose()">
+    <div class="modal" >
+      <div class="message-section">
+        {{ confirmMessage }}
+      </div>
+      <button class="btn-danger" (click)="onClose()">{{ close }}</button>
     </div>
   </div>
-  
+</div>

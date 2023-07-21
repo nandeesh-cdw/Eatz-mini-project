@@ -1,14 +1,17 @@
 <header class="header">
+    <!-- title -->
     <h1 class="title">eatz</h1>
+    <!-- links section -->
     <div class="link-section" >
-        <a  class='links'routerLink="/home"routerLinkActive="" *ngIf="isGuest || isUser">Home</a>
-        <a  class='links'routerLink='/offers' routerLinkActive="" *ngIf="isGuest || isUser">Offers</a>
-        <a  class='links'routerLink="/restaurants" routerLinkActive="" *ngIf="isGuest || isUser">Restaurants</a>
-        <a  class='links'routerLink='/orders' routerLinkActive="" *ngIf="isUser">Orders</a>
-        <a  class='links'routerLink="" routerLinkActive="" *ngIf="isUser || isGuest" (click)="onLogout()">Logout</a>
+        <a  class='links'routerLink="home"routerLinkActive="active-link" *ngIf="isGuest || isUser">{{ home }}</a>
+        <a  class='links'routerLink='offers' routerLinkActive="active-link" *ngIf="isGuest || isUser">{{ offers }}</a>
+        <a  class='links'routerLink="restaurants" routerLinkActive="active-link" *ngIf="isGuest || isUser">{{ restaurants }}</a>
+        <a  class='links'routerLink='orders' routerLinkActive="active-link" *ngIf="isUser">{{ orders }}</a>
+        <a  class='links'routerLinkActive="active-link" *ngIf="isUser || isGuest" (click)="onLogout()">{{ logout }}</a>
     </div>
+    <!-- cart display -->
     <div class="cart-section" >
-        <a class="cart" >cart <span class="cart-list">{{ orderSize }}</span><img src="../../assets/icons/caret-down-red.svg" alt=""></a>
+        <a class="cart" *ngIf="isUser">cart <span class="cart-list" *ngIf="orderSize > 0">{{ orderSize }}</span><img src="../../assets/icons/caret-down-red.svg" alt=""></a>
         <!-- download the svg file instead of cdn  -->
     </div>
 </header>

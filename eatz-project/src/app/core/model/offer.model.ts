@@ -1,3 +1,7 @@
+/**
+ * This is the modal class for offers api
+ */
+
 interface OfferMasterData{
     result:Array<Offer>
 }

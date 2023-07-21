@@ -1,17 +1,25 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { LoginService } from '../core/services/login.service';
-import { OfferService } from '../core/services/offer.service';
+import { HEADER_CONSTANTS } from '../core/constants/constants';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit , OnDestroy{
   isUser: boolean = false;
   isGuest: boolean = false;
-  orderSize=0;
-  constructor(private loginService: LoginService,private offerService:OfferService){}
+  home:string=HEADER_CONSTANTS.home;
+  title:string=HEADER_CONSTANTS.title;
+  orders:string=HEADER_CONSTANTS.orders;
+  restaurants:string=HEADER_CONSTANTS.restaurants;
+  offers:string=HEADER_CONSTANTS.offers;
+  logout:string=HEADER_CONSTANTS.logout;
+  orderSize:number=0;
+  constructor(private loginService: LoginService,private router:Router){}
+  
   
   ngOnInit(){
     this.getGuestStatus();
@@ -28,13 +36,19 @@ export class HeaderComponent {
 
   onLogout(){
     this.loginService.logout();
+    this.router.navigate(['/']);
   }
+
   getOrderSize():void{
-    this.offerService.getOrderList().subscribe(orderList => { 
+    this.loginService.getOrderList().subscribe(orderList => { 
       console.log("subscribing data");
       this.orderSize=orderList
     });
     console.log(this.orderSize);
+  }
+
+  ngOnDestroy(): void {
+      
   }
 
 }

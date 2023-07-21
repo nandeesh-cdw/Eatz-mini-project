@@ -13,16 +13,17 @@ export class RestaurantsComponent implements OnInit {
   offerImageUrl= IMAGEAPI;
   restaurants:Restaurant[]=[];
   searchText:string='';
+  restaurantName:string='';
+  showResults=false;
   test!:Observable<string>;
-  constructor(private restaurantService:RestaurantService ){
+  constructor(private restaurantService:RestaurantService){
     this.test=this.restaurantService.getObservable();
-    
-
   }
   
   ngOnInit():void {
   this.getRestaurants();
   this.searchFilter();
+  
   }
   
   getRestaurants():void{
@@ -46,4 +47,5 @@ export class RestaurantsComponent implements OnInit {
     this.test.subscribe((newValue:string)=> this.searchText=newValue);
     console.log(this.searchText);
   }
+
 }

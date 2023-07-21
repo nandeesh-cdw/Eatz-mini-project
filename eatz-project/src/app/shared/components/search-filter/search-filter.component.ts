@@ -6,6 +6,7 @@ import {
   Output,
   ViewChild,
 } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import {
   Restaurant,
   RestaurantMasterData,
@@ -21,7 +22,10 @@ import { RestaurantService } from 'src/app/core/services/restaurant.service';
 export class SearchFilterComponent implements OnInit {
   @Input() size: number = 0;
   @Input() isDisabled: boolean | null = false;
-  @Output() dataEvent = new EventEmitter<void>();
+  @Input() inputString: string='';
+  @Input() showResults: boolean = true;
+  @Output() dataEvent = new EventEmitter<string>();
+
   restaurantName: string = '';
   _searchText: string = '';
   restaurants: Array<Restaurant> = [];
@@ -29,10 +33,14 @@ export class SearchFilterComponent implements OnInit {
 
   @ViewChild('input') inputField!: HTMLInputElement;
 
-  constructor(private restaurantService: RestaurantService) {}
+  constructor(private restaurantService: RestaurantService,private route:ActivatedRoute ) {}
 
   ngOnInit(): void {
     this.getRestaurants();
+    this.route.params.subscribe(params => {
+      this._searchText=params['name?'] || '';
+    });
+    this.restaurantService.setSearchText(this._searchText);
   }
 
   get searchText(): string {
@@ -44,7 +52,7 @@ export class SearchFilterComponent implements OnInit {
   }
 
   onSubmit(): void {
-    this.dataEvent.emit();
+    this.dataEvent.emit(this._searchText);
   }
   getRestaurants(): void {
     this.restaurantService
@@ -63,4 +71,5 @@ export class SearchFilterComponent implements OnInit {
   onEnterData() {
     this.hideList = true;
   }
+  
 }
