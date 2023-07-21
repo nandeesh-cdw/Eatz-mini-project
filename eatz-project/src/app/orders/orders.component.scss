@@ -1,0 +1,125 @@
+@import "../core/sass/index.scss";
+
+
+.order-container {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-4;
+    width: 100%;
+
+    .order-cell {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        background-color: $order-color;
+        border-radius: $spacing-1;
+        padding: $spacing-2;
+
+        .order-details {
+            display: flex;
+            gap: $spacing-1+$spacing-0-5;
+
+            .order-image {
+                height: $spacing-9;
+                width: $spacing-10+$spacing-2;
+                aspect-ratio: 3/4;
+                border-top-left-radius: $spacing-0-5;
+                border-top-right-radius: $spacing-0-5;
+            }
+
+            .order-tab {
+                .food-title {
+                    font-family: "Poppins-Medium";
+                    color: $light-grey;
+                    font-size: $spacing-1+$spacing-0-5;
+                }
+
+                .order-place {
+                    color: $light-grey;
+                }
+
+                .order-id {
+                    font-family: 'Poppins-light';
+                    margin: $spacing-1 0;
+                    font-size: $spacing-0-75;
+                    color: $light-grey;
+
+                }
+
+                .food-item {
+                    font-family: 'Poppins-light';
+                    font-size: $spacing-0-75;
+                    color: $light-grey;
+                }
+
+            }
+        }
+
+        .order-status {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-end;
+
+            .order-info {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+
+                .order-price {
+                    font-size: $spacing-1;
+                    color: $light-grey;
+                }
+            }
+
+            .order-btn-section {
+                margin: 0 $spacing-1;
+            }
+        }
+    }
+
+    .show-more {
+        align-self: flex-end;
+    }
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .view-order {
+        display: flex;
+        align-items: flex-end;
+        flex-direction: column;
+        border-radius: $spacing-1;
+        width: 900px;
+        background-color: $bgDrop;
+        padding: $spacing-2;
+
+        .modal-container {
+            display: flex;
+            padding: $spacing-2;
+            gap: $spacing-2;
+            width: 100%;
+
+            .modal-image {
+                width: 400px;
+                height: 300px;
+            }
+            .modal-detail{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+            }
+        }
+    }
+
+}
