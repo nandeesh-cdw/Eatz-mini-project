@@ -1,0 +1,63 @@
+@import '../../core/sass/index.scss';
+
+// form container 
+.form-container {
+    display: flex;
+    justify-content: space-between;
+    width: 84%;
+    margin: $spacing-4 auto;
+    padding: $spacing-4 0;
+
+    // login image 
+    .login-image {
+        width: $spacing-30*2;
+        height: $spacing-30 + $spacing-8;
+        aspect-ratio: 16/9;
+    }
+
+    // form
+    .form {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        width: 330px;
+        // padding:$spacing-1;
+        gap: 50px;
+
+        // login title 
+        .login-title {
+            color: $secondary;
+            align-self: self-start;
+            font-weight: 300;
+            font-size: $spacing-1 + $spacing-0-75;
+        }
+
+        // form inputs
+        .form-control {
+            width: 100%;
+            border: transparent none;
+            padding: $spacing-1;
+            box-shadow: rgba(236, 126, 178, 0.2) 0px 7px 29px 0px;
+        }
+
+        // button section
+        .btn-section {
+            display: flex;
+            gap: $spacing-2;
+
+            .btn-guest {
+                cursor: pointer;
+                font-weight: 500;
+                font-size: $spacing-1;
+                border: transparent;
+                height: $spacing-2+$spacing-0-5;
+                width: $spacing-9;
+                background-color: $secondary;
+                color: $white;
+            }
+
+        }
+
+    }
+}

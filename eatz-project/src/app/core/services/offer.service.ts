@@ -4,7 +4,7 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { OfferMasterData } from "../model/offer.model";
-import { OFFERSAPI } from "../constants/api";
+import { OFFERSAPI } from "../../../Environments/api/api";
 
 
 @Injectable({

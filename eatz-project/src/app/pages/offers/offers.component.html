@@ -1,0 +1,8 @@
+<div class="container">
+  <div class="offer-component">
+    <app-page-title [title]="'offers'"></app-page-title>
+    <div class="offer-container">
+      <app-offer-card *ngFor="let offer of offers" [offer]="offer" [buttonLabel]="cartLabel" (offerAdded)="onAddCart($event)"></app-offer-card>
+    </div>
+  </div>
+</div>

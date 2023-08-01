@@ -7,10 +7,14 @@
     margin: 0;
     box-sizing: border-box;
     padding: 0;
+    font-family: $poppins;
 }
 //removes focus for the inputs 
 *:focus {
     outline: none;
+}
+body{
+    
 }
 //styles for the default button
 .btn-danger{
@@ -28,12 +32,14 @@
 // styles for unavailble styles 
 .unavailable{
     opacity: 0.5;
+    cursor: not-allowed;
+    
 }
 // container styles 
 .container{
-    display: flex;
-    height: 80vh;
-    padding: $spacing-4 $spacing-9+$spacing-0-5;
+    // display: flex;
+    height: 100vh;
+    // padding: $spacing-4 $spacing-9+$spacing-0-5;
 }
 // page title styles 
 .page-title{

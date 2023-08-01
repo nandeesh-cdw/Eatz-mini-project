@@ -1,0 +1,6 @@
+<!-- cart link -->
+<a class="cart" (click)="onCartClick()" >Cart <span class="cart-order" *ngIf="cartOrders.length > 0">{{ cartOrders.length }} </span><img src="../../assets/icons/caret-down-red.svg" alt=""></a>
+<!-- Cart list  -->
+<div class="cart-list" *ngIf="isCartListOpen && cartOrders.length > 0" appClickOutside (appClickOutside)="closeCartList()" >
+    <div class="cart-item" *ngFor="let order of cartOrders ">{{ order.name }} X {{ order.count }}</div>
+</div>

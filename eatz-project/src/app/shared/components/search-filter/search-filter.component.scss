@@ -1,48 +1,65 @@
 @import "../../../core/sass/index.scss";
 
-.input-cell{
+// search component 
+.input-cell {
     display: flex;
     justify-content: flex-end;
     align-items: center;
     background-color: $white;
-    width: 650px;
-    height: 50px;
-    padding:$spacing-2 $spacing-0-5;
+    width: $spacing-30 + $spacing-7 + $spacing-0-5;
+    // height: 50px;
+    padding: $spacing-0-5 $spacing-0-5;
     box-shadow: rgba(236, 126, 178, 0.2) 0px 7px 29px 0px;
-    input{
+
+    // input styles 
+    input {
         font-size: $spacing-1 + $spacing-0-25;
-        width: 100%;
-        height: 40px;
-        padding: $spacing-1;
+        width: 80%;
+        height: $spacing-2 + $spacing-0-25;
+        padding: $spacing-1 $spacing-2 + $spacing-0-5;
         border: transparent;
     }
-    .btn-danger{
+
+    // button styles 
+    .btn-danger {
         font-size: $spacing-1 + $spacing-0-25;
-        width: $spacing-10;
-        height: $spacing-3;
+        width: $spacing-10 + $spacing-1 + $spacing-0-75 + $spacing-0-1;
+        height: $spacing-4 + $spacing-0-25;
     }
-    
+
+    // button for restuarant page 
+    .btn-restuarant {
+        width: $spacing-7 + $spacing-0-75 + $spacing-0-1;
+        height: $spacing-3 + $spacing-0-1;
+    }
+
+
 }
-.items-section{
+
+//Drop down section 
+.dropdown-section {
     position: absolute;
-    width: 650px;
-    height: 200px;
+    width: 34.7%;
+    height: $spacing-10 + $spacing-2 + $spacing-0-5;
     z-index: 100;
     margin-top: 5px;
     overflow: scroll;
     border-radius: 0 0 $spacing-0-75 $spacing-0-75;
-    .item{
+
+    // results 
+    .item {
         cursor: pointer;
         z-index: 10;
         background-color: $white;
-        padding:10px;
+        padding: 10px;
     }
-    .items:nth-child(even){
+
+    .items:nth-child(even) {
         background-color: $light-grey;
     }
+    
 }
-
-
-.btn-danger:active {
-    background-color: blue;
+.icon {
+    width: 30px;
+    height: 100%;
 }

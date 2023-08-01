@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="order-container">
+    <!-- page title -->
+    <app-page-title [title]="'Your orders'"></app-page-title>
+    <!-- order card  -->
+    <app-order-card *ngFor="let order of displayedOrders" [order]="order" (clickEvent)="onOrderClick($event)"></app-order-card>
+    <!-- Button -->
+    <button
+      class="show-more btn-danger"
+      type="button"
+      (click)="loadMore()"
+      *ngIf="displayedOrders.length < orders.length"
+    >
+      show more
+    </button>
+  </div>
+  <!-- modal -->
+  <div class="modal" *ngIf="isModalOpen">
+    <app-order-modal [order]="modalOrder" (clickEvent)="closeModal()" appClickOutside (appClickOutside)="closeModal()" ></app-order-modal>
+  </div>
+</div>

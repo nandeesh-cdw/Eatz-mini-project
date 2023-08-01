@@ -20,10 +20,16 @@ import { RestaurantService } from 'src/app/core/services/restaurant.service';
   styleUrls: ['./search-filter.component.scss'],
 })
 export class SearchFilterComponent implements OnInit {
+  //Inputs 
+  @Input() isRestaurant: boolean = false;
+  @Input() buttonLabel: string='';
   @Input() size: number = 0;
   @Input() isDisabled: boolean | null = false;
-  @Input() inputString: string='';
+  @Input() inputString: string = ''; // change variable
   @Input() showResults: boolean = true;
+  @Input() showLabel: boolean = false;
+  @Input() placeHolder: string = 'search restuarants';
+  @Input() imageSrc?:string;
   @Output() dataEvent = new EventEmitter<string>();
 
   restaurantName: string = '';
@@ -33,19 +39,24 @@ export class SearchFilterComponent implements OnInit {
 
   @ViewChild('input') inputField!: HTMLInputElement;
 
-  constructor(private restaurantService: RestaurantService,private route:ActivatedRoute ) {}
+  constructor(
+    private restaurantService: RestaurantService,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
     this.getRestaurants();
-    this.route.params.subscribe(params => {
-      this._searchText=params['name?'] || '';
+    this.route.queryParams.subscribe((params) => {
+      this._searchText = params['restaurantName'] || '';
+      this.restaurantService.setSearchText(this._searchText);
     });
-    this.restaurantService.setSearchText(this._searchText);
+    // this.restaurantService.setSearchText(this._searchText);
   }
 
   get searchText(): string {
     return this._searchText;
   }
+  
   set searchText(value: string) {
     this._searchText = value;
     this.restaurantService.updateSearchText(this._searchText);
@@ -71,5 +82,4 @@ export class SearchFilterComponent implements OnInit {
   onEnterData() {
     this.hideList = true;
   }
-  
 }

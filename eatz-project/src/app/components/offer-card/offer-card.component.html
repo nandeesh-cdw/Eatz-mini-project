@@ -1,0 +1,35 @@
+<!-- offer cell  -->
+<div class="offer-cell" [class.unavailable]="">
+  <!-- Food image -->
+  <img class="food-image" [src]="offerImageUrl + offer.cloudinaryImageId" alt="" *ngIf="offer" />
+  <img class="food-image" [src]="offerImageUrl + restaurant.cloudinaryImageId" alt="" *ngIf="restaurant" />
+  <!-- food detail section -->
+  <div class="cell-details" [ngStyle]="restaurant ? {'padding': '2rem 2rem 1rem 2rem'} : {}">
+    <div class="food-option" *ngIf="offer"></div>
+    <!-- food details  -->
+    <div class="food-details">
+      <div class="food-name">{{ offer?.name || restaurant?.name}}</div>
+      <div class="restaurant-name">{{ offer?.restaurant || restaurantLocation }}</div>
+      <div class="delivery-detail" *ngIf="offer">
+        {{ OFFER_MESSAGES.delivery }} {{ offer.deliveryTimeInMins }} {{ OFFER_MESSAGES.mins }}
+      </div>
+      <div class="food-type" *ngIf="restaurant">{{ restaurant.cuisine }}</div>
+    </div>
+    <!-- price section -->
+    <div class="price-details" *ngIf="offer">
+      <div class="new-price">₹ {{ offer.price.discountPrice }}</div>
+      <div class="old-price">₹ {{ offer.price.costPrice }}</div>
+    </div>
+    <!-- rating section -->
+    <div class="restaurant-details" *ngIf="restaurant">
+      <div class="rating">{{ OFFER_MESSAGES.rating }} {{ restaurant.rating }}</div>
+      <div class="delivery-time">{{ OFFER_MESSAGES.delivery }} {{ restaurant.deliveryTimeInMins }} {{
+        OFFER_MESSAGES.mins }}</div>
+      <div class="cost">₹ {{ restaurant.price.costForTwo }} {{ OFFER_MESSAGES.for_two }}</div>
+    </div>
+  </div>
+  <!-- Buttons  -->
+  <button class="btn-danger" type="button" (click)="onAddCart()" [class.unavailable]="">
+    {{ buttonLabel }}
+  </button>
+</div>

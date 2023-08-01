@@ -1,0 +1,23 @@
+<div class="container">
+  <!-- container -->
+  <div class="offer-component">
+    <div class="title-section">
+      <!-- page title -->
+      <app-page-title [title]="'Restaurants'"></app-page-title>
+      <!-- search filter  -->
+      <app-search-filter [showResults]="showResults" [placeHolder]="''" [buttonLabel]="'GO'" [isRestaurant]="true"
+        ></app-search-filter
+      >
+    </div>
+    <!-- card container -->
+    <div class="offer-container">
+      <!-- restaurant card  -->
+      <app-offer-card
+        *ngFor="let restaurant of restaurants | filterPipe : searchText"
+        [restaurant]="restaurant"
+        [buttonLabel]="seeMoreLabel"
+        [addPadding]="true"
+      ></app-offer-card>
+    </div>
+  </div>
+</div>

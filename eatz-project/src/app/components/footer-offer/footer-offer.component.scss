@@ -1,0 +1,48 @@
+@import '../../core/sass/index.scss';
+
+//offer card 
+.offer-cell{
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    background-color: $white;
+    border-radius: $spacing-1;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    // offer image 
+    .food-image {
+        width: 100%;
+        height: 245px;
+        border-top-left-radius: $spacing-1;
+        border-top-right-radius: $spacing-1;
+    }
+    // offer details section
+    .food-section{
+        display: flex;
+        gap: $spacing-1;
+        flex-direction: column;
+        padding: $spacing-2 $spacing-1+$spacing-0-5 $spacing-2+$spacing-0-5 $spacing-1 ;
+        //food details 
+        .food-details{
+            display: flex;
+            justify-content:space-between;
+            .food-title{
+                color: $blue;
+            }
+            
+            .food-price{
+                font-family: $georgia ;
+                font-size: $spacing-1+$spacing-0-5;
+                font-weight: 600;
+                margin-right: $spacing-1+$spacing-0-5;
+                color: $new-price;
+            }
+        }
+        
+        .food-description{
+            font-size: 12px;
+            color: $old-price;
+        }
+
+    }
+    
+}

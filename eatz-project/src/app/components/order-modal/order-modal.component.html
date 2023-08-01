@@ -1,0 +1,20 @@
+<!-- order modal  -->
+<div class="view-order">
+  <div class="modal-container">
+    <!-- image  -->
+    <img class="modal-image" [src]="imageUrl + order.imageId" alt="food" />
+    <!-- food details  -->
+    <div class="modal-detail">
+      <p class="order-place">Restaurant Name: {{ order.restaurant }}</p>
+      <p class="order-place">Order Status : {{ order.status }}</p>
+      <p class="order-place">Payment Details: {{ order.paymentMode }}</p>
+      <div class="food-item" *ngFor="let item of order.orderItems">
+        <p>Food: {{ item.name }}</p>
+        <p>Quantity: {{ item.quantity }}</p>
+        <p>Cost: {{ item.costForOne * item.quantity }}</p>
+      </div>
+    </div>
+  </div>
+  <!-- close button -->
+  <button type="button" class="btn-danger" (click)="onClick()">Close</button>
+</div>

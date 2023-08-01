@@ -1,0 +1,30 @@
+<div class="container">
+    <!-- form container  -->
+    <div class="form-container">
+        <!-- image -->
+        <img class='login-image' [src]="LOGIN_IMAGE" alt="LoginImage" />
+        <!-- form -->
+        <form #login="ngForm" (ngSubmit)="onSubmit(login)">
+            <div class="form">
+                <!-- title -->
+                <h3 class="login-title">{{ LOGIN_MESSAGES.title }}</h3>
+                <!-- username field -->
+                <input type="text" name="username" class="form-control" placeholder="Username" required
+                    [(ngModel)]="username" />
+                <!-- password field -->
+                <input type="password" name="password" class="form-control" placeholder="Password" required
+                    [(ngModel)]="password" />
+                <!-- error message -->
+                <div *ngIf="login.controls['username']?.errors?.['inValidCredentials']">
+                    <p class="error-message">{{ LOGIN_MESSAGES.error_message }}</p>
+                </div>
+                <!-- button section  -->
+                <div class="btn-section">
+                    <button class="btn-danger" type="submit">{{ LOGIN_MESSAGES.login }}</button>
+                    <button class="btn-guest" type="button" (click)="onGuestLogin()">{{ LOGIN_MESSAGES.guest }}</button>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>

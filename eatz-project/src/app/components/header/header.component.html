@@ -1,0 +1,16 @@
+<header class="header">
+    <!-- title -->
+    <h1 class="title">eatz</h1>
+    <!-- links section -->
+    <div class="link-section" >
+        <app-link [routerLink]="APP_ROUTES.home" [label]="HEADER_MESSAGES.home" [isActive]="'active-link'"  *ngIf="isGuest || isUser" ></app-link>
+        <app-link [routerLink]="APP_ROUTES.offers" [label]="HEADER_MESSAGES.offers" [isActive]="'active-link'" *ngIf="isGuest || isUser" ></app-link>
+        <app-link [routerLink]="APP_ROUTES.restaurants" [label]="HEADER_MESSAGES.restaurants" [isActive]="'active-link'" *ngIf="isGuest || isUser" ></app-link>
+        <app-link [routerLink]="APP_ROUTES.orders" [label]="HEADER_MESSAGES.orders"  [isActive]="'active-link'" *ngIf="isUser" ></app-link>
+        <app-link [label]="HEADER_MESSAGES.logout"   (clickEvent)="onLogout()" *ngIf="isGuest || isUser" ></app-link>
+    </div>
+    <!-- cart display -->
+    <div class="cart-section" >
+       <app-cart [cartOrders]="cartOrders" *ngIf="isUser"></app-cart>
+    </div>
+</header>

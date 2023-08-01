@@ -1,0 +1,54 @@
+<div class="container">
+  <!-- footer section  -->
+  <div class="footer-section">
+    <!-- title -->
+    <h3 class="footer-title">
+      {{ FOOTER_MESSAGES.footer_title }}
+    </h3>
+    <!-- description  -->
+    <div class="description">{{ FOOTER_MESSAGES.footer_description }}</div>
+    <div class="catalog-section">
+      <!-- offer cell -->
+      <app-footer-offer></app-footer-offer>
+      <app-footer-offer></app-footer-offer>
+      <app-footer-offer></app-footer-offer>
+      <app-footer-offer></app-footer-offer>
+      <app-footer-offer></app-footer-offer>
+      <app-footer-offer></app-footer-offer>
+    </div>
+    <!-- footer  -->
+    <footer class="footer">
+      <app-copyright
+        [src]="AWESOME_ICONS.copyright"
+        [alt]="'copyright'"
+        [name]="FOOTER_MESSAGES.company_name"
+      ></app-copyright>
+      <div class="links-section">
+        <!-- social links  -->
+        <div class="media-links">
+          <app-media-links
+            [src]="AWESOME_ICONS.tumblr"
+            alt="instagram"
+          ></app-media-links>
+          <app-media-links
+            [src]="AWESOME_ICONS.facebook"
+            alt="facebook"
+          ></app-media-links>
+          <app-media-links
+            [src]="AWESOME_ICONS.linkedin"
+            alt="linkedin"
+          ></app-media-links>
+          <app-media-links
+            [src]="AWESOME_ICONS.instagram"
+            alt="instagram"
+          ></app-media-links>
+        </div>
+        <app-copyright
+          [src]="AWESOME_ICONS.copyright"
+          [alt]="'copyright'"
+          [name]="FOOTER_MESSAGES.company_name"
+        ></app-copyright>
+      </div>
+    </footer>
+  </div>
+</div>

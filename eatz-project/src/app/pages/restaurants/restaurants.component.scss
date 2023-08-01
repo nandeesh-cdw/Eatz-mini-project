@@ -1,0 +1,12 @@
+@import '../../core/sass/index.scss';
+@import '../offers/offers.component.scss';
+
+// container
+.offer-component {
+    width: 84%;
+    margin: $spacing-4 auto;
+    .title-section{
+        display: flex;
+        justify-content: space-between;
+    }
+}

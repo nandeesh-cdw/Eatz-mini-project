@@ -1,0 +1,79 @@
+@import '../../core/sass/index.scss';
+
+// order cell 
+.order-cell {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    background-color: $order-color;
+    border-radius: $spacing-1;
+    padding: $spacing-2;
+
+    // order details section 
+    .order-details {
+        display: flex;
+        gap: $spacing-1+$spacing-0-5;
+
+        // order image 
+        .order-image {
+            height: $spacing-9;
+            width: $spacing-10+$spacing-2;
+            aspect-ratio: 3/4;
+            border-top-left-radius: $spacing-0-5;
+            border-top-right-radius: $spacing-0-5;
+        }
+
+        // food details section
+        .order-tab {
+            .food-title {
+                font-family: "Poppins-Medium";
+                color: $light-grey;
+                font-size: $spacing-1+$spacing-0-5;
+            }
+
+            .order-place {
+                color: $light-grey;
+            }
+
+            .order-id {
+                font-family: 'Poppins-light';
+                margin: $spacing-1 0;
+                font-size: $spacing-0-75;
+                color: $light-grey;
+
+            }
+
+            .food-item {
+                font-family: 'Poppins-light';
+                font-size: $spacing-0-75;
+                color: $light-grey;
+            }
+
+        }
+    }
+
+    // order status section 
+    .order-status {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-end;
+
+        .order-info {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+
+            .order-price {
+                font-size: $spacing-1;
+                color: $light-grey;
+            }
+        }
+
+        // button section
+        .order-btn-section {
+            margin: 0 $spacing-1;
+        }
+    }
+}

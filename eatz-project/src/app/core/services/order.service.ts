@@ -3,23 +3,23 @@ API. */
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { OrderMasterData } from '../model/order.model';
-import { Observable} from 'rxjs';
-import { ORDERSAPI} from '../constants/api';
+import { Observable } from 'rxjs';
+import { ORDERSAPI } from '../../../Environments/api/api';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class OrderService {
- readonly ORDERS_API !:string
+  readonly ORDERS_API!: string;
 
   constructor(private http: HttpClient) {
-    this.ORDERS_API=ORDERSAPI;
+    this.ORDERS_API = ORDERSAPI;
   }
   /**
    * this method is used to get order data from the server
    * @returns data from api
    */
-  getOrders():Observable<OrderMasterData>{
+  getOrders(): Observable<OrderMasterData> {
     return this.http.get(this.ORDERS_API) as Observable<OrderMasterData>;
   }
 }

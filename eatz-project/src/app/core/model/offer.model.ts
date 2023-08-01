@@ -12,6 +12,7 @@ interface Offer{
     available: boolean;
     cloudinaryImageId: string;
     price: Price;
+    count: number; 
 }
 interface Price{
     discountPrice:number;

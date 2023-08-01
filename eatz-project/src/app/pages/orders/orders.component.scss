@@ -1,0 +1,28 @@
+@import '../../core/sass/index.scss';
+
+// order container
+.order-container {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-4;
+    width: 84%;
+    margin: $spacing-4 auto;
+
+    .show-more {
+        align-self: flex-end;
+    }
+}
+
+// modal
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}

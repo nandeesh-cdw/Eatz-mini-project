@@ -1,0 +1,39 @@
+@import '../../core/sass/index.scss';
+
+// header styles 
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: $spacing-0-25+0.18rem $spacing-9;
+    background-color: $primary;
+
+    // links section 
+    .link-section {
+        cursor: pointer;
+        color: $white;
+        display: flex;
+        justify-content: center;
+        gap: $spacing-5;
+        margin: 0 $spacing-20+$spacing-8 0 $spacing-4;
+        ;
+        align-items: center;
+    }
+
+    // cart section 
+    .cart-section {
+        display: flex;
+        align-items: center;
+        gap: $spacing-0-5;
+    }
+
+}
+
+// route active styles 
+.active-link {
+    border-bottom: 2.5px solid $white;
+ }
+//title
+.title {
+    color: $white;
+    font-size: 44px;
+}

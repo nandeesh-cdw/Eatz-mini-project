@@ -1,0 +1,12 @@
+@import '../../core/sass/index.scss';
+//links
+.links{
+    font-size: $spacing-0-75;
+    color: $white;
+    text-decoration: none;
+    
+}
+// active class
+.active-link {
+    border-bottom: 2.5px solid $white;
+ }

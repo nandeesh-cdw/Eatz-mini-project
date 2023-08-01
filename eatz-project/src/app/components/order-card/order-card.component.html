@@ -1,0 +1,34 @@
+<!-- order cell -->
+<div class="order-cell">
+  <!-- order details  -->
+  <div class="order-details">
+    <img class="order-image" [src]="imageUrl + order.imageId" alt="order.id" />
+    <div class="order-tab">
+      <h3 class="food-title">{{ order.restaurant }}</h3>
+      <p class="order-place">{{ order.location }}</p>
+      <p class="order-id">Order #{{ order.id }}</p>
+      <div class="order-items">
+        <p class="food-item" *ngFor="let item of order.orderItems">
+          {{ item.name }} x {{ item.quantity }}
+        </p>
+      </div>
+    </div>
+  </div>
+  <!-- order status details  -->
+  <div class="order-status">
+    <div class="order-info">
+      <p *ngIf="order.status == 'ORDERED'">
+        Ordered on {{ order.orderDateTime | dateCustom }}
+      </p>
+      <p *ngIf="order.status == 'DELIVERED'">
+        Delivered on {{ order.orderDateTime | dateCustom }}
+      </p>
+      <p class="order-price">Total: {{ order.price?.subTotal }}</p>
+    </div>
+    <div class="order-btn-section">
+      <button class="btn-danger" type="button" (click)="onClick()">
+        View Details
+      </button>
+    </div>
+  </div>
+</div>

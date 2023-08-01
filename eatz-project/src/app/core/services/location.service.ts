@@ -5,7 +5,7 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { LocationMasterData } from "../model/location.model";
 import { Observable } from "rxjs";
-import { LOCATIONAPI } from "../constants/api"
+import { LOCATIONAPI } from "../../../Environments/api/api"
 
 @Injectable({
     providedIn: 'root'

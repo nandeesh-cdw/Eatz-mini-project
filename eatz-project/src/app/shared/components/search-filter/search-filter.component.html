@@ -1,8 +1,10 @@
+<!-- Input section  -->
 <div class="input-cell">
-    <input type="text" [(ngModel)]="searchText"  placeholder="Search Restaurants" (input)="onEnterData()">
-    <button type="submit" class="btn-danger" [style.backgroundColor]="isDisabled ? 'grey' : 'red'" [disabled]="isDisabled" (click)="onSubmit()">GO</button>
+    <input type="text" [(ngModel)]="searchText"  [placeholder]="placeHolder" (input)="onEnterData()">
+    <button type="submit" class="btn-danger" [class.btn-restuarant]="isRestaurant"[style.backgroundColor]="isDisabled ? 'grey' : 'red'" [disabled]="isDisabled" (click)="onSubmit()" ><img class='icon' [src]="imageSrc" alt="icon" *ngIf="imageSrc">{{ buttonLabel }}</button>
 </div>
-<div class="items-section"  *ngIf="hideList && showResults">
+<!-- Dropdown box -->
+<div class="dropdown-section"  *ngIf="hideList && showResults">
     <div class="item" *ngFor="let restaurant of restaurants | filterPipe:searchText:true " (click)="onItemClick(restaurant.name)" >
         <span *ngIf="searchText=== restaurant.name?false : true">{{ restaurant.name }}</span>
     </div>

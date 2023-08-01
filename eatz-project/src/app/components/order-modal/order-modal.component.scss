@@ -1,0 +1,33 @@
+@import '../../core/sass/index.scss';
+
+// modal 
+.view-order {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    border-radius: $spacing-1;
+    width: 900px;
+    background-color: $bgDrop;
+    padding: $spacing-2;
+
+    // modal container 
+    .modal-container {
+        display: flex;
+        padding: $spacing-2;
+        gap: $spacing-2;
+        width: 100%;
+
+        // image 
+        .modal-image {
+            width: 400px;
+            height: 300px;
+        }
+
+        // food details 
+        .modal-detail {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+    }
+}

@@ -1,8 +1,7 @@
 /**
  *  This  guard  is used to authenticate valid users
  */
-
-import { CanActivateFn, Router } from '@angular/router';
+import { CanActivateFn} from '@angular/router';
 import { LoginService } from '../services/login.service';
 import { inject } from '@angular/core';
 
@@ -19,6 +18,5 @@ export const userGuard: CanActivateFn = (route, state) => {
     return false;
     
   }
-  
   return true;
 };

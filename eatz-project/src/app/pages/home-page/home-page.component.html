@@ -1,0 +1,24 @@
+<div class="container">
+    <!-- home container  -->
+    <div class="home-content">
+        <div class="restaurant-section">
+            <p class="heading">Food</p>
+            <h2 class="tag-line">Discover Restaurant & Delicious Food</h2>
+            <app-search-filter (dataEvent)="onGo($event)" [showLabel]="true" [imageSrc]="AWESOME_ICONS.search">
+                <img class="search-icon" [src]="">
+            </app-search-filter>
+        </div>
+        <div class="image-section">
+            <img [src]="LOGIN_IMAGE" alt="LoginImage" class="display-image">
+        </div>
+    </div>
+</div>
+<!-- location pin -->
+<div class="location">
+    <img  class="location-pin" [src]="AWESOME_ICONS.location" alt="location pin">
+    <div class="area">{{ location?.country_name }}</div>
+</div>
+<!-- form  -->
+<app-form></app-form>
+<!-- footer  -->
+<app-footer></app-footer>

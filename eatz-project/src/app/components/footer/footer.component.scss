@@ -1,0 +1,55 @@
+@import "../../core/sass/index.scss";
+
+// footer container 
+.footer-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap:$spacing-3;
+    padding: $spacing-2 0;
+    width: 100%;
+    // description
+    .description{
+        color: $grey;
+
+    }
+    // footer title 
+    .footer-title{
+        font-size: $spacing-1+$spacing-0-5;
+        color: $blue;
+       
+    }
+    // offer section 
+    .catalog-section{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 0px $spacing-8+$spacing-0-25+$spacing-0-1;
+        row-gap: $spacing-3+$spacing-0-5;
+        width: 80%;
+        margin-bottom: $spacing-6;
+        
+
+    }
+    
+}
+// footer 
+.footer{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 $spacing-10+$spacing-7;
+    // social links 
+    .links-section{
+        display: flex;
+        gap: $spacing-3;
+        align-items: center;
+        .media-links{
+            display: flex;
+            gap: $spacing-2 + $spacing-0-75;
+        }
+        
+        
+    }
+}
